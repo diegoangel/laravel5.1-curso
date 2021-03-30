@@ -1,0 +1,1 @@
+<h1>Usuario ID {{ $user->id }}</h1>
