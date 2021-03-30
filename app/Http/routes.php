@@ -18,8 +18,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/welcome/{name}', [WelcomeController::class, 'index']);
+Route::get('/welcome/{name}', 'WelcomeController:@index');
 
-Route::get('/users', [UserController::class, 'index']);
+Route::get('/users', 'UserController@index');
 
-Route::get('/users/{id}', [UserController::class, 'show']);
+Route::get('/users/{user}', 'UserController@show');

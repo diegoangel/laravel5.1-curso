@@ -12,9 +12,9 @@ class AddUsersLastnameColumn extends Migration
      */
     public function up()
     {
-        Schema::table('users', function ($table) {
+        Schema::table('users', function (Blueprint $table) {
             $table->string('lastname')->after('name');
-        })
+        });
     }
 
     /**
@@ -24,8 +24,8 @@ class AddUsersLastnameColumn extends Migration
      */
     public function down()
     {
-        Schema::table('users', function() {
+        Schema::table('users', function(Blueprint $table) {
             $table->dropColum('lastname');
-        })
+        });
     }
 }
