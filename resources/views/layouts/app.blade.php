@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<title></title>
-</head>
-<body>
-
-</body>
+    <head>
+        <title>Curso Laravel - @yield('title')</title>
+    </head>
+    <body>
+        <div class="container">
+            @yield('content')
+        </div>
+    </body>
 </html>
