@@ -22,4 +22,8 @@ Route::get('/welcome/{name}', 'WelcomeController:@index');
 
 Route::get('/users', 'UserController@index');
 
-Route::get('/users/{user}', 'UserController@show');
+Route::get('/users/{id}', 'UserController@show');
+
+Route::get('/users/create', 'UserController@create');
+
+Route::post('/users', 'UserController@store');
