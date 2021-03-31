@@ -7,7 +7,7 @@
 
 <h1>Listado de Usuarios!!!</h1>
 
-<table>
+<table class="table">
 	<thead>
 		<tr>
 			<th>#</th>
