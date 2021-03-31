@@ -1,6 +1,11 @@
-<h1>Listado de Usuarios!!!</h1>
+@extends('layouts.app')
 
-<!-- ACA IBA LA TABLA CON EL LISTADO DE USUARIOS PERO LA ELIMINE SIN QUERER -->
+@section('title', 'Listado de Usuarios!!!')
+
+@section('content')
+
+
+<h1>Listado de Usuarios!!!</h1>
 
 <table>
 	<thead>
@@ -22,3 +27,5 @@
 		</tr>
 	</tbody>
 </table>
+
+@endsection
