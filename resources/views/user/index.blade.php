@@ -2,7 +2,7 @@
 
 <!-- ACA IBA LA TABLA CON EL LISTADO DE USUARIOS PERO LA ELIMINE SIN QUERER -->
 
-<table>
+<table >
 	<thead>
 		<tr>
 			<th>#</th>
