@@ -18,12 +18,14 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/welcome/{name}', 'WelcomeController:@index');
+//Route::get('/welcome/{name}', 'WelcomeController:@index');
 
 Route::get('/users', 'UserController@index');
 
-Route::get('/users/{id}', 'UserController@show');
+
 
 Route::get('/users/create', 'UserController@create');
 
 Route::post('/users', 'UserController@store');
+
+Route::get('/users/{id}', 'UserController@show');
