@@ -26,4 +26,11 @@ Route::get('/users/create', 'UserController@create');
 
 Route::post('/users', 'UserController@store');
 
+Route::get('users/delete/{id}', 'UserController@destroy');
+
+Route::get('/users/listedit/{id}', 'UserController@edit');
+
+Route::post('/users/edit/{id}', 'UserController@update');
+
 Route::get('/users/{id}', 'UserController@show');
+

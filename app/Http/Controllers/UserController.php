@@ -38,12 +38,21 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        //dd($request->input("name"));
+        dd($request->input("foto"));
         $user = new User;
         $user->name = $request->input("name");
         $user->lastname = $request->input("lastname");
         $user->email = $request->input("email");
         $user->password = bcrypt($request->input("password"));
+        $user->foto = $request->input("foto");
+        $foto=$_FILES['foto']['tmp_name'];
+        if($user->foto!=""){
+            $destino="publi/img/".$user->foto;
+            //die($foto." - ".$destino);
+            if(move_uploaded_file($foto,$destino)){
+              chmod($destino,0755);
+        }
+}
         $user->save();
 
 
@@ -68,9 +77,11 @@ class UserController extends Controller
      * @param  \App\Models\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function edit(User $user)
+    public function edit($id)
     {
-        //
+        $user = User::find($id);
+
+        return view("user.edit", ["user" => $user]);
     }
 
     /**
@@ -80,9 +91,13 @@ class UserController extends Controller
      * @param  \App\Models\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, User $user)
+    public function update(Request $request, $id)
     {
-        //
+        $user = User::where('id', '=', $id)->first();
+
+        $user->update($request->all());
+
+        return redirect("/");
     }
 
     /**
@@ -91,8 +106,12 @@ class UserController extends Controller
      * @param  \App\Models\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function destroy(User $user)
+    public function destroy($id)
     {
-        //
+        //dd ($id);
+        $user = User::find($id);
+        $user->delete();
+        return redirect('/');
+    
     }
 }

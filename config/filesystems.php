@@ -45,7 +45,8 @@ return [
 
         'local' => [
             'driver' => 'local',
-            'root'   => storage_path('app'),
+            //'root'   => storage_path('app'), es el que estaba, agregué el de abajo
+            'root' => public_path().'/storage',
         ],
 
         'ftp' => [

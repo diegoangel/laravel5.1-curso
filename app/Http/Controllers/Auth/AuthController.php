@@ -1,3 +1,4 @@
+aq3
 <?php
 
 namespace App\Http\Controllers\Auth;

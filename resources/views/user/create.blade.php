@@ -6,7 +6,7 @@
 
 <h1>Nuevo Usuario</h1>
 
-<form action="{{ action('UserController@store') }}" method="post">
+<form action="{{ action('UserController@store') }}" method="post" >
 	{{ csrf_field() }}
 	<div class="mb-3">
 		<label for="name" class="form-label">Name</label>
@@ -26,6 +26,10 @@
 	<div class="mb-3">
 		<label for="password" class="form-label">Password</label>
 		<input type="password" class="form-control" id="password" name="password">
+	</div>
+	<div class="mb-3">
+		<label for="foto" class="form-label">Foto</label>
+		<input type="file" class="form-control" id="foto" name="foto">
 	</div>
 		<button type="submit" class="btn btn-primary">Submit</button>
 </form>
